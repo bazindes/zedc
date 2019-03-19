@@ -19,7 +19,7 @@ BSTree *BSTree_create(BSTree_compare compare) {
   map->compare = compare == NULL ? default_compare : compare;
 
   return map;
-error:
+ error:
   if (map) {
     BSTree_destroy(map);
   }
