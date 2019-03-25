@@ -14,6 +14,10 @@ struct Node {
   Node *pright;
 };
 
+struct NodeList {
+  int a;
+};
+
 // Function prototypes
 Node *create_node(long val);
 Node *add_node(long val, Node *pNode);
@@ -37,8 +41,9 @@ int main(void) {
 
     printf("Do you want to enter another(y or n)? ");
     scanf(" %c", &answer);
-  } while (tolower(answer) == 'y');
 
+  } while (tolower(answer) == 'y');
+  
   printf("The val is ascending sequence are:\n");
   list_node(pRoot);
   free_node(pRoot);
@@ -82,20 +87,22 @@ Node *add_node(long val, Node *pNode) {
 
 // List the node val in ascending sequece
 void list_node(Node *pNode) {
-  if(pNode -> pleft)
-    list_node(pNode -> pleft);
+  if (pNode->pleft)
+    list_node(pNode->pleft);
 
-  printf("%10d x %10ld\n", pNode -> count, pNode -> item);
+  printf("%10d x %10ld\n", pNode->count, pNode->item);
 
-  if(pNode -> pright)
-    list_node(pNode -> pright);
+  if (pNode->pright)
+    list_node(pNode->pright);
 }
 
 // release memory allocated to nodes
-void free_node(Node *pNode){
-  if(!pNode)
+void free_node(Node *pNode) {
+  if (!pNode)
     return;
-  if(pNode -> pleft) free_node(pNode -> pleft);
-  if(pNode -> pright) free_node(pNode -> pright);
+  if (pNode->pleft)
+    free_node(pNode->pleft);
+  if (pNode->pright)
+    free_node(pNode->pright);
   free(pNode);
 }
