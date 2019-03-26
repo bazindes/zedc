@@ -26,3 +26,5 @@ typedef struct _addr{
 } inetaddr_4;
 
 inetaddr_4 *addr_info_2;
+
+// finincial account availability
