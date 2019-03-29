@@ -24,7 +24,6 @@ int main() {
 }
 
 double betsy(int lns) { return 0.05 * lns; }
-
 double pam(int lns) { return 0.03 * lns + 0.04 * lns * lns; }
 
 void estimate(int lines, double (*pf)(int)) {
