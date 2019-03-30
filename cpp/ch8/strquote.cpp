@@ -4,8 +4,8 @@
   Date: 2019-03-29 16:46
 */
 
-#include <string>
 #include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -45,12 +45,12 @@ string version1(const string &s1, const string &s2) {
   return temp;
 }
 
-const string & version2(string &s1, const string &s2) {
+const string &version2(string &s1, const string &s2) {
   s1 = s2 + s1 + s2;
   return s1;
 }
 
-const string &version3(string &s1, const string &s2){
+const string &version3(string &s1, const string &s2) {
   string temp;
   temp = s2 + s1 + s2;
   return temp;
