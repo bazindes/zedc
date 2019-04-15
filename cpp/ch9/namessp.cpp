@@ -1,0 +1,47 @@
+/*
+  namessp.cpp
+  Created by: baz
+  Date: 2019-04-15 00:54
+*/
+#include "namesp.h"
+#include <iostream>
+
+void other(void);
+void another(void);
+
+int main(void) {
+  using debts::Debt;
+
+  using debts::showDebt;
+
+  Debt golf = {{"Benny", "Goatsniff"}, 120.0};
+  showDebt(golf);
+  other();
+  another();
+
+  return 0;
+}
+
+void other(void) {
+  using std::cout;
+  using std::endl;
+  using namespace debts;
+  Person dg = {"Doodles", "Glister"};
+  showPerson(dg);
+  cout << endl;
+  Debt Zippy[3];
+  int i;
+  for (i = 0; i < 3; i++)
+    getDebt(Zippy[i]);
+  for (i = 0; i < 3; i++)
+    showDebt(Zippy[i]);
+  cout << "Total debt: $" << sumDebts(Zippy, 3) << endl;
+  return;
+}
+
+void another(void) {
+  using pers::Person;
+  Person collector = {"Milo", "Rightshift"};
+  pers::showPerson(collector);
+  std::cout << std::endl;
+}
